@@ -91,26 +91,32 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="App-header">
-      <div className="Post">
-        <p>This is where post operation is performed:</p>
+    <div className="app-container">
+      <div className="post-container">
+      <marquee class="marq" bgcolor = "black" direction = "left" loop="" >
+        <div class="namn">Youness Essadak</div>
+        <div class="kurs">REST-API Projektet</div>
+      </marquee>
+        <h2>Skriv ett namn:</h2>
         <input
           type="text"
           value={newUser.name}
           onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
-          placeholder="Name"
+          placeholder="Namn"
         />
-        <button onClick={addUser}>Add User</button>
+        <button onClick={addUser}>Lägg till</button>
       </div>
-      <div className="PUT and Delete">
+      <div className="put-delete-container">
         {data ? (
-          <ul>
-            <h2>Displayed Data</h2>
-            <p>In the input field you type the updated name you want for your user</p>
+          <ul className="user-list">
+            <h2>Här är lista av namnen:</h2>
+            <p>Här kan du uppdatera namnen eller ta bort dem.</p>
             {Object.keys(data.users).map((userId) => (
-              <li key={userId}>
-                id: {userId} {}
-                Name: {data.users[userId].name}
+              <li key={userId} className="user-item">
+                <div className="user-info">
+                  <p>ID: {userId}</p>
+                  <p>Namn: {data.users[userId].name}</p>
+                </div>
                 <input
                   type="text"
                   value={updatedNames[userId] || ''}
@@ -120,10 +126,10 @@ const Home = () => {
                       [userId]: e.target.value,
                     })
                   }
-                  placeholder="Name"
+                  placeholder="Namn"
                 />
-                <button onClick={() => updateUser(userId)}>Update</button>
-                <button onClick={() => deleteUser(userId)}>Delete</button>
+                <button className='updatebutton' onClick={() => updateUser(userId)}>Uppdatera</button>
+                <button className='deletebutton' onClick={() => deleteUser(userId)}>Ta bort</button>
               </li>
             ))}
           </ul>
@@ -131,7 +137,6 @@ const Home = () => {
           'Loading...'
         )}
       </div>
-
     </div>
   );
 };

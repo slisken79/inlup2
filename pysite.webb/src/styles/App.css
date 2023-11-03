@@ -1,55 +1,124 @@
-.App {
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.post-container {
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.post-container p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007BFF;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.Post {
-  display: flex;
-  justify-content: center;
+button:hover {
+  background-color: #0056b3;
+}
+
+.put-delete-container {
+  font-size: 16px;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user-item {
+  background-color: #f7f7f7;
+  padding: 10px;
+  margin-bottom: 10px;
+  /*display: flex;*/
   align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.Post p {
-  margin: 0px;
-  padding-right: 10px;
+.user-info {
+  flex: 1;
 }
 
-.Post input,
-.Post button {
-  height: fit-content;
+input[type="text"] {
+  padding: 10px;
+  margin-right: 10px;
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  padding: 10px 20px;
+  background-color: #2bb671;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.deletebutton {
+  padding: 10px 20px;
+  background-color: #f93d3d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.updatebutton {
+  padding: 10px 20px;
+  background-color: #1e9ebe;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #000408;
+}
+
+.marq {
+  padding-top:30px;
+  padding-bottom:30px;
+}
+.namn {
+  font-size:36px;
+  font-weight:bold;
+  color:white;
+  padding-bottom:10px;
+}
+.kurs {
+  font-size:24px;
+  font-weight:bold;
+  color:rgb(141, 142, 138);
+  padding-bottom:10px;
 }

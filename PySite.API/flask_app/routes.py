@@ -1,9 +1,15 @@
 from flask_app import app
 from flask import jsonify, request
+from flask import redirect
+
+@app.route("/")
+def root():
+    return redirect("http://127.0.0.1:5000/api/users") # Omdiregirar uppstarten
 
 # Add initial User
 current_id = 0
-users = {str(current_id): {"name": "Jonass"}}
+users = {str(current_id): {"name": "Youness"}}
+
 
 
 @app.route("/api/users", methods=["GET", "POST"])
@@ -39,5 +45,19 @@ def handle_user(user_id):
     if user_id in users:
         if request.method == "GET":
             return jsonify(users[user_id])
+        elif request.method == "PUT":
+            try:
+                data = request.get_json()
+                users[user_id] = data # Uppdaterar Dictionary
+                return jsonify({"message": "User updated successfully"})
+            except Exception as e:
+                print("Error occurred: ", e)
+                return jsonify({"message": "Could not update user"}), 500
+        elif request.method == "DELETE":
+            del users[user_id]  # Ta bort användaren från Dictionary
+            return jsonify({"message": "User deleted successfully"})
     else:
         return jsonify({"message": "User not found"}), 404
+
+
+
