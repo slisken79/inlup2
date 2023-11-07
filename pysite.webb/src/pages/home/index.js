@@ -93,9 +93,9 @@ const Home = () => {
   return (
     <div className="app-container">
       <div className="post-container">
-      <marquee class="marq" bgcolor = "black" direction = "left" loop="" >
-        <div class="namn">Youness Essadak</div>
-        <div class="kurs">REST-API Projektet</div>
+      <marquee className="marq" bgcolor = "black" direction = "left" loop="" >
+        <div className="namn">Youness Essadak</div>
+        <div className="kurs">REST-API Projektet</div>
       </marquee>
         <h2>Skriv ett namn:</h2>
         <input

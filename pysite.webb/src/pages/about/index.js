@@ -1,7 +1,7 @@
 const About = () => {
 
     return (
-        <p>Hej du befinner dig på about!</p>
+        <h1 className="center-screen">About</h1>
     )
 };
 

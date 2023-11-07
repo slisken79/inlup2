@@ -7,4 +7,4 @@ python run.py
 Run the following commands in cmd/terminal when ur inside the api folder
 1. Create virtual env: python -m venv venv
 2. enter into virutal env: venv\Scripts\activate
-3. Install packages: pip install -r requiremenets.txt
+3. Install packages: pip install -r requirements.txt
